@@ -10,6 +10,9 @@ angular.module('myApp.controllers', [])
   .controller('HomeCtrl',['$scope',function($scope){
 
   }])
-  .controller('AddExpenseCtrl',['$scope','categoryList',function($scope,categoryList){
+  .controller('AddExpenseCtrl',['$scope','categoryList','expService',function($scope,categoryList,expService){
     $scope.categories = categoryList;
+    $scope.submit = function() {
+      expService.saveExpense($scope.expense);
+    }
   }])
