@@ -10,3 +10,6 @@ angular.module('myApp.controllers', [])
   .controller('HomeCtrl',['$scope',function($scope){
 
   }])
+  .controller('AddExpenseCtrl',['$scope','categoryList',function($scope,categoryList){
+    $scope.categories = categoryList;
+  }])
