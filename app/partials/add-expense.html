@@ -1,0 +1,10 @@
+<h2>Add Expense</h2>
+<form id="addForm" name="addForm" novalidate>
+  <label for="category">Category</label>
+  <select ng-model="expense.category" ng-options="category for category in categories" id="category"></select>
+  <label for="amount">Amount</label>
+  <input type="text" ng-model="expense.amount" id="amount">
+  <label for="">Description</label>
+  <input type="text" ng-model="expense.description" id="description">
+  <button ng-click="submit()">Submit</button>
+</form>
