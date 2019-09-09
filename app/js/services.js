@@ -16,6 +16,20 @@ angular.module('myApp.services', [])
         var key = prefix + timeStamp;
         data = JSON.stringify(data);
         localStorage[key] = data;
+      },
+      getExpense : function(){
+        var expenses = []
+        var prefixLength = prefix.length
+        Object.keys(localStorage).forEach(function(key){
+          if(key.substring(0,prefixLength) === prefix)
+          {
+            var item = window.localStorage[key]
+            item = JSON.parse(item)
+            expenses.push(item)
+          }
+        })
+        console.log(expenses)
+        return expenses;
       }
     }
   }])

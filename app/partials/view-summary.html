@@ -1,0 +1,7 @@
+<h2>Expense Details</h2>
+<div ng-repeat="expense in expenses" class="exp-details">
+    <div class="col-sm-1">{{$index+1}}</div>
+    <div class="col-sm-2">{{expense.category}}</div>
+    <div class="col-sm-3">{{expense.description}}</div>
+    <div class="col-sm-4">{{expense.amount}}</div>
+</div>
