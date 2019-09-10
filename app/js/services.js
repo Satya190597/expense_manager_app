@@ -1,5 +1,7 @@
 'use strict';
 
+// import { parse } from "path";
+
 /* Services */
 
 
@@ -30,6 +32,22 @@ angular.module('myApp.services', [])
         })
         console.log(expenses)
         return expenses;
+      },
+      getCategoryTotal : function(category){
+        var categoryTotal = 0
+        var prefixLength = prefix.length
+        Object.keys(localStorage).forEach(function(key) {
+          if(key.substring(0,prefixLength) === prefix)
+          {
+            var item = window.localStorage[key]
+            item = JSON.parse(item)
+            if(item.category === category)
+            {
+              categoryTotal += parseFloat(item.amount)
+            }
+          }
+        })
+        return categoryTotal;
       }
     }
   }])

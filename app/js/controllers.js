@@ -16,6 +16,15 @@ angular.module('myApp.controllers', [])
       expService.saveExpense($scope.expense);
     }
   }])
-  .controller('ViewSummaryCtrl',['$scope','expService',function($scope,expService){
+  .controller('ViewSummaryCtrl',['$scope','expService','categoryList',function($scope,expService,categoryList){
     $scope.expenses = expService.getExpense();
+    $scope.summaryies = []
+    var categories = categoryList
+    categories.forEach(element => {
+      var total = expService.getCategoryTotal(element)
+      $scope.summaryies.push({
+        category: element,
+        amount: total
+      })
+    });
   }])
