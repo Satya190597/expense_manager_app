@@ -1,11 +1,19 @@
-<h2>Expense Details</h2>
-<div ng-repeat="expense in expenses" class="exp-details">
-    <div class="col-sm-1">{{$index+1}}</div>
-    <div class="col-sm-2">{{expense.category}}</div>
-    <div class="col-sm-3">{{expense.description}}</div>
-    <div class="col-sm-4">{{expense.amount}}</div>
+<div id="summary">
+    <h2>Expense Summary</h2>
+    <div bar-chart data='summaryies'></div>
 </div>
-<div ng-repeat="summary in summaryies">
-    <div>{{summary.category}}</div>
-    <div>{{summary.amount}}</div>
+<div id="details">
+    <h2>Expense Details</h2>
+    <div ng-repeat="expense in expenses" class="exp-details">
+        <div class="col-sm-1">{{$index+1}}</div>
+        <div class="col-sm-2">{{expense.category}}</div>
+        <div class="col-sm-3">{{expense.description}}</div>
+        <div class="col-sm-4">{{expense.amount}}</div>
+    </div>
+    <div ng-repeat="summary in summaryies">
+        <div>{{summary.category}}</div>
+        <div>{{summary.amount}}</div>
+    </div>
 </div>
+
+
